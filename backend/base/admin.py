@@ -1,9 +1,23 @@
 from django.contrib import admin
 
-# Register your models here.
+# Remove this line to unregister the Note model from the admin
+# admin.site.register(Note)
 
-from .models import Note
-admin.site.register(Note)
+
+# from django.contrib import admin
+
+# # Register your models here.
+
+# from .models import Note
+# admin.site.register(Note)
+
+
+# from django.contrib import admin
+
+# # Register your models here.
+
+# from .models import Note
+# admin.site.register(Note)
 
 
 

@@ -1,18 +1,26 @@
+# from rest_framework.serializers import ModelSerializer
+# from base.models import Note
+
+
+# class NoteSerializer(ModelSerializer):
+#     class Meta:
+#         model = Note
+#         fields = '__all__'
+
+
+
 from rest_framework.serializers import ModelSerializer
-from base.models import Note
-from django.contrib.auth.models import User
+# from base.models import Product
+from django.contrib.auth.models import User 
 from rest_framework import serializers
 
 # -----------------------------------------
 
-# from djoser.serializers import UserCreateSerializer
-# from account.models import User
 
-
-class NoteSerializer(ModelSerializer):
-    class Meta:
-        model = Note
-        fields = '__all__'
+# class NoteSerializer(ModelSerializer):
+#     class Meta:
+#         model = Note
+#         fields = '__all__'
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -29,9 +37,15 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-# ---------------------------------------------------------------
 
-# class UserCreateSerializer(UserCreateSerializer):
-#     class Meta(UserCreateSerializer.Meta):
-#         model=User
-#         fields=('id', 'email', 'name', 'password')
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+
+# ------------------------------------------------------------------
+
+# class ProductSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Product
+#         fields = ('id', 'name', 'price')
